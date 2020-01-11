@@ -11,8 +11,13 @@
             <div class="col-9 pt-5">
                 <div class="d-flex justify-content-between align-items-baseline">
                     <h1>{{ $user->username }}</h1>
-                    <a href="{{ url('p/create') }}" class="btn btn-primary">Add New Post</a>
+                    @can('update', $user->profile)
+                        <a href="{{ url('p/create') }}" class="btn btn-primary">Add New Post</a>
+                    @endcan
                 </div>
+                @can('update', $user->profile)
+                    <a href="{{ url('/profile/'.$user->id) }}">Edit Profile</a>
+                 @endcan
                 <div class="d-flex">
                     <div class="pr-5"><strong>{{ $user->posts->count() }}</strong> posts</div>
                     <div class="pr-5"><strong>23k</strong> followers</div>
@@ -26,10 +31,12 @@
         <div class="row pt-5">
             @foreach($user->posts as $post)
                 <div class="col-4 pb-4">
-                    <img src="{{ '/storage/'.$post->image }}" class="w-100">
+                    <a href="{{ url('/p/'.$post->id) }}">
+                        <img src="{{ '/storage/'.$post->image }}" class="w-100">
+                    </a>
                 </div>
             @endforeach
         </div>
     </div>
 @endsection
-//TODO Starts From 2:20
+
