@@ -6,9 +6,21 @@
           <div class="col-7 offset-1 pr-0 pl-0">
               <img src="/storage/{{ $post->image }}" class="w-100 mt-2">
           </div>
-          <div class="col-4 mt-2 p-2" style="background-color: whitesmoke;">
-              <h4>{{ $post->user->username }}</h4>
-              <p>{{ $post->caption }}</p>
+          <span class="col-4 mt-2 p-2" style="background-color: white;">
+             <div class="d-flex align-items-center">
+                 <div class="pr-3">
+                     <img src="{{ '/storage/'.$post->user->profile->image }}" class="rounded-circle w-100" style="max-width: 40px;">
+                 </div>
+                 <div>
+                     <div class="font-weight-bold">
+                         <a href="{{ url('/profile/'.$post->user->id) }}">
+                             <span class="text-dark">{{ $post->user->username }}</span></a>
+                         <a href="#" class="pl-3">Follow</a>
+                     </div>
+                 </div>
+             </div>
+              <hr>
+              <p class="pl-3"><span class="font-weight-bold"><a href="{{ url('/profile/'.$post->user->id) }}"><span class="text-dark">{{ $post->user->username }}</span></a></span> {{ $post->caption }}</p>
           </div>
       </div>
   </div>

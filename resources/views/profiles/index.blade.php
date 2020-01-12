@@ -4,17 +4,21 @@
     <div class="container" style="width: 60%;margin: 0 auto;">
         <div class="row">
             <div class="col-3 p-5">
-                <?php dd($user->profile->image); ?>
+
                 <img
-                    src="{{ '/storage/'.$user->profile->image ?? 'no-image.jpg' }}"
+                    src="{{ $user->profile->getImage() }}"
                     alt="profile" class="rounded-circle w-100">
             </div>
             <div class="col-9 pt-5">
                 <div class="d-flex justify-content-between align-items-baseline">
-                    <h1>{{ $user->username }}</h1>
+                   <div class="d-flex align-items-center pb-3">
+                       <h1>{{ $user->username }}</h1>
+                       <follow-button></follow-button>
+                   </div>
                     @can('update', $user->profile)
-                        <a href="{{ url('p/create') }}" class="btn btn-primary">Add New Post</a>
+                        <a href="{{ url('p/create') }}" class="btn btn-danger">Add New Post</a>
                     @endcan
+                    //TODO 3:20
                 </div>
                 @can('update', $user->profile)
                     <a href="{{ url('/profile/'.$user->id.'/edit') }}">Edit Profile</a>
