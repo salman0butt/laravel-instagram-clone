@@ -11,9 +11,12 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', 'PostsController@index');
+Route::get('/email', function() {
+    return new \App\Mail\NewUserWelcomeMail();
 });
+
+Route::post('/follow/{user}', 'FollowsController@store');
 
 Auth::routes();
 Route::get('/p/create', 'PostsController@create');

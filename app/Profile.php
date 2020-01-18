@@ -12,6 +12,9 @@ class Profile extends Model
         $imagePath = $this->image ?? '/profile/no-image.jpg';
         return '/storage/'.$imagePath;
     }
+    public function followers() {
+        return $this->belongsToMany('\App\User');
+    }
     public function user(){
         return $this->belongsTo('App\User');
     }
