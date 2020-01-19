@@ -8,7 +8,7 @@
                 <span class="col-4 offset-2 mt-2 p-2" style="background-color: white;">
              <div class="d-flex align-items-center">
                  <div class="pr-3">
-                     <img src="{{ '/storage/'.$post->user->profile->image }}" class="rounded-circle w-100"
+                     <img src="{{ $post->user->profile->getImage() }}" class="rounded-circle w-100"
                           style="max-width: 40px;">
                  </div>
                  <div>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Post;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Intervention\Image\Facades\Image;
 
 class PostsController extends Controller
@@ -49,6 +50,37 @@ class PostsController extends Controller
     public function show(\App\Post $post,User $user) {
         $follows = (auth()->user()) ? auth()->user()->following->contains($user) : false;
        return view('posts.show', compact('post','follows'));
+    }
+    public function edit($id) {
+        $post = Post::findOrFail($id);
+        return view('posts.edit', compact('post'));
+    }
+    public function update($post) {
+        $photo = Post::findOrFail($post);
+        $data = request()->validate([
+            'caption' => 'required',
+            'image' => ['required', 'image']
+        ]);
+
+        if (request('image')){
+            unlink(public_path() .'/storage/'.$photo->image);
+            $imagePath = request('image')->store('uploads', 'public');
+            $image = Image::make(public_path("storage/{$imagePath}"))->fit(1200, 1200);
+            $image->save();
+        }
+        Post::where('id', $post)->update([
+                'caption' => $data['caption'],
+                'image' => $imagePath
+            ]);
+        return redirect()->back();
+    }
+
+
+    public function destroy($id) {
+        $post = Post::findOrFail($id);
+        unlink(public_path() .'/storage/'.$post->image);
+        $post->delete();
+        return redirect('/profile/'.auth()->user()->id);
     }
 
 }

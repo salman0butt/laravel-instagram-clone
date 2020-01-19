@@ -12,6 +12,9 @@
 */
 
 Route::get('/', 'PostsController@index');
+Route::delete('/p/{id}', 'PostsController@destroy');
+Route::get('/p/{post}/edit', 'PostsController@edit');
+Route::patch('/p/{post}', 'PostsController@update');
 Route::get('/email', function() {
     return new \App\Mail\NewUserWelcomeMail();
 });

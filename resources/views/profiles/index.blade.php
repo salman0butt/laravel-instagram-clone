@@ -33,14 +33,22 @@
                 <div><a href="#">{{ $user->profile->url }}</a></div>
             </div>
         </div>
-        <div class="row pt-5">
-            @foreach($user->posts as $post)
+
+        <div class="row pt-5" style="border-top: 1px solid #ddd;">
+            @if ($user->posts->count() > 0)
+              @foreach($user->posts as $post)
                 <div class="col-4 pb-4">
                     <a href="{{ url('/p/'.$post->id) }}">
                         <img src="{{ '/storage/'.$post->image }}" class="w-100">
                     </a>
                 </div>
-            @endforeach
+              @endforeach
+            @else
+           <div style="display: block;margin: 0 auto;">
+               <h1 class="text-muted">No Users Posts</h1>
+           </div>
+            @endif
+
         </div>
     </div>
 @endsection
