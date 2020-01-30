@@ -4,10 +4,12 @@
     <list default="true" id="1449bdf7-6298-40c8-9752-0f34262c8a84" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PostsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PostsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProfilesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProfilesController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Post.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Post.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/posts/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/posts/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/posts/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/posts/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/posts/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/posts/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/profiles/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/profiles/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -39,6 +41,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="blade" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -212,7 +215,15 @@
       <workItem from="1579365161729" duration="1248000" />
       <workItem from="1579367648117" duration="5243000" />
       <workItem from="1579437064856" duration="5273000" />
-      <workItem from="1579445431118" duration="894000" />
+      <workItem from="1579445431118" duration="1232000" />
+      <workItem from="1579951876587" duration="117000" />
+      <workItem from="1579952212958" duration="21000" />
+      <workItem from="1579952317937" duration="14356000" />
+      <workItem from="1580104818229" duration="459000" />
+      <workItem from="1580314545772" duration="378000" />
+      <workItem from="1580314946245" duration="8887000" />
+      <workItem from="1580406489588" duration="23000" />
+      <workItem from="1580406539821" duration="5288000" />
     </task>
     <servers />
   </component>
@@ -220,10 +231,10 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="480" y="159" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1579159797030">
+    <state x="480" y="159" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1580406515037">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="480" y="159" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1600.860@0.0.1600.860" timestamp="1579159797030" />
+    <state x="480" y="159" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1600.860@0.0.1600.860" timestamp="1580406515037" />
     <state x="530" y="186" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1578762492114">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
@@ -244,21 +255,25 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state width="1557" height="222" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1577813556140" />
-    <state x="301" y="73" key="SettingsEditor" timestamp="1579367630145">
+    <state x="301" y="73" key="SettingsEditor" timestamp="1580407158788">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="301" y="73" key="SettingsEditor/0.0.1600.860@0.0.1600.860" timestamp="1579367630145" />
+    <state x="301" y="73" key="SettingsEditor/0.0.1600.860@0.0.1600.860" timestamp="1580407158788" />
     <state width="498" height="446" key="SwitcherDM" timestamp="1577985936192">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state width="498" height="446" key="SwitcherDM/0.0.1600.860@0.0.1600.860" timestamp="1577985936192" />
+    <state x="260" y="105" width="1097" height="598" key="find.popup" timestamp="1580320667477">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="260" y="105" width="1097" height="598" key="find.popup/0.0.1600.860@0.0.1600.860" timestamp="1580320667477" />
     <state x="441" y="156" width="700" height="530" key="recent.locations.popup" timestamp="1577889386355">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="441" y="156" width="700" height="530" key="recent.locations.popup/0.0.1600.860@0.0.1600.860" timestamp="1577889386355" />
-    <state x="463" y="180" width="672" height="678" key="search.everywhere.popup" timestamp="1579437376305">
+    <state x="463" y="180" width="672" height="678" key="search.everywhere.popup" timestamp="1580409479501">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="463" y="180" width="672" height="678" key="search.everywhere.popup/0.0.1600.860@0.0.1600.860" timestamp="1579437376305" />
+    <state x="463" y="180" width="672" height="678" key="search.everywhere.popup/0.0.1600.860@0.0.1600.860" timestamp="1580409479501" />
   </component>
 </project>

@@ -28,7 +28,7 @@
                     <div class="form-group row">
                         <img src="{{ '/storage/'.$post->image }}" style="width: 150px;margin-bottom: 5px;margin-left: 15px;border: 1px dashed #ddd;padding: 5px;">
                         <label for="image" class="col-md-12 col-form-label">Post Image:</label>
-                        <input type="file" class="col-md-12 form-control-file" value="{{ $post->image }}" id="image" name="image">
+                        <input type="file" class="col-md-12 form-control-file" value="/" id="image" name="image">
                         @error('image')
                         <span class="invalid-feedback" role="alert" style="display: block;">
                                         <strong>{{ $message }}</strong>
